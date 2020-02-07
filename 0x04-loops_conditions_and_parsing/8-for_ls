@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# This script is displaying the second column of the file names
+LIST=$(ls)
+for i in $LIST; do
+  echo "$i" | cut -d "-" -f 2
+done
