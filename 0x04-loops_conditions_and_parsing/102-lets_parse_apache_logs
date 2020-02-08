@@ -1,7 +1,4 @@
 #!/usr/bin/env bash
 # This script reads fields in a file
 file="./apache-access.log"
-while read -r line
-do
- echo "$line" | awk '{ print $1, $9 }'
-done <"$file"
+awk '{ print $1, $9 }' $file
