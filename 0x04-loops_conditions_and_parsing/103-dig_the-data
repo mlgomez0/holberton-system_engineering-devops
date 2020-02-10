@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# This script reads fields in a file
+file="./apache-access.log"
+awk '{ print $1, $9 }' $file | sort | uniq -c | sort -gr
