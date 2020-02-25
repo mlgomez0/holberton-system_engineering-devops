@@ -20,7 +20,7 @@ Concepts explored:
 -What is a subnet
 -Why IPv6 was created
 ##TCP/UDP
--What are the 2 mainly used data transfer protocols for IP (transfer level on the OSI schema)
+-What are the 2 mainly used data transfer protocols for IP
 -What is the main difference between TCP and UDP
 -What is a port
 -Memorize SSH, HTTP and HTTPS port numbers
