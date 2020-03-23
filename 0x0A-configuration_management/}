@@ -1,4 +1,0 @@
-exec {'killmenow':
-  path     => '.'
-  command  => 'pkill -9 -f killmenow',
-}

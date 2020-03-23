@@ -1,3 +1,4 @@
+#Creates a file in /tmp/holberton
 file {'/tmp/holberton':
   ensure  => present,
   owner   => 'www-data',
