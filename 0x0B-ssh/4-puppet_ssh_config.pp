@@ -1,8 +1,11 @@
 #set up your client SSH configuration file
-class { 'ssh':
-  storeconfigs_enabled => false,
-  client_options       => {
-    'PasswordAuthentication' => 'no',
-    'IdentityFile'           => '~/.ssh/holberton'
-    },
+file_line { 'holberton':
+  path => '/etc/ssh/ssh_config',
+  line => 'IdentityFile ~/.ssh/holberton',
+}
+file_line { 'password':
+  ensure => present,
+  path   => '/etc/ssh/ssh_config',
+  line   => 'PasswordAuthentication no',
+  match  => 'PasswordAuthentication yes',
 }
