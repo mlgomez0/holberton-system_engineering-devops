@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 #start apache
 echo "Hello Holberton" | sudo tee /var/www/html/index.html
-sudo service apache start
+sudo service apache2 start
