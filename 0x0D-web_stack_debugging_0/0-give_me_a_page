@@ -1,4 +1,3 @@
 #!/usr/bin/env bash
-#install Nginx
-echo "Hello Holberton" | sudo tee /var/www/html/index.html
+#start apache
 sudo service apache start
