@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+#install Nginx with redirection, adding HTTP redirection
+sudo add-apt-repository ppa:vbernat/haproxy-1.8 -y
+sudo apt-get -y update
+sudo apt-get -y install haproxy
+sudo chmod 777 /etc/haproxy
+sudo chmod 777 /etc/haproxy/haproxy.cfg
+sudo sed -i "$ a frontend firstbalance\n\tbind *:80\n\tmode http\n\tdefault_backend webservers\n\nbackend webservers\n\tbalance roundrobin\n\t\mode http\n\tserver 1163-web-01 35.196.105.181404:80 check\n\tserver 1163-web-02 3.93.188.97:80 check" /etc/haproxy/haproxy.cfg
+sudo service haproxy restart
