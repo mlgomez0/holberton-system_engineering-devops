@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#install Nginx with redirection, adding HTTP redirection
+#stop the service after execute
 sed -i "s/8080/80/g" /etc/nginx/sites-enabled/default
 sudo service nginx restart
 sudo service nginx stop
