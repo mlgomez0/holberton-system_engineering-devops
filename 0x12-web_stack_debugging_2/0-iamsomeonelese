@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#Script to run whoami for different users
+
+sudo -u $1 whoami
