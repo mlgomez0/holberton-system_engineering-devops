@@ -19,4 +19,4 @@ if __name__ == "__main__":
     s = "Employee {} is done with tasks({}/{}):"
     print(s.format(req_user.get("name"), len(req_done), len(req_todo)))
     for task in req_done:
-        print("	{}".format(task.get("title")))
+        print("	 {}".format(task.get("title")))
