@@ -14,20 +14,21 @@ if __name__ == "__main__":
 
     fl = "todo_all_employees.json"
     url_user = "https://jsonplaceholder.typicode.com/users/"
+    url_todo = "https://jsonplaceholder.typicode.com/todos/"
+    req_todo = requests.get(url_todo).json()
     req_user = requests.get(url_user).json()
     final_dic = {}
     for user in req_user:
         l = []
-        u_id = str(user.get("id"))
+        u_id = user.get("id")
         u_n = user.get("username")
-        url_todo = "https://jsonplaceholder.typicode.com/todos/?userId=" + u_id
-        req_todo = requests.get(url_todo).json()
         for task in req_todo:
-            dic = {}
-            tx = task.get("title")
-            st = task.get("completed")
-            dic = {'username': u_n, 'task': tx, 'completed': st}
-            l.append(dic)
+            if task.get("userId") == u_id:
+                dic = {}
+                tx = task.get("title")
+                st = task.get("completed")
+                dic = {'username': u_n, 'task': tx, 'completed': st}
+                l.append(dic)
         final_dic[u_id] = l
     json_str = json.dumps(final_dic)
     with open(fl, mode="w", encoding='utf-8') as file_json:
