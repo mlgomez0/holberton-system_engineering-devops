@@ -17,6 +17,6 @@ if __name__ == "__main__":
     req_todo = requests.get(url_todo).json()
     req_done = requests.get(url_done).json()
     s = "Employee {} is done with tasks({}/{}):"
-    print(s.format(req_user["name"], len(req_done), len(req_todo)))
+    print(s.format(req_user.get("name"), len(req_done), len(req_todo)))
     for task in req_done:
-        print("	{}".format(task["title"]))
+        print("	{}".format(task.get("title")))
