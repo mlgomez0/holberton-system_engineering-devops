@@ -18,9 +18,10 @@ def count_words(subreddit, word_list, v_aft=''):
     for key in word_list:
         url = s1 + subreddit + "/search.json?q=title:" + key + "&sort=hot"
         get_req = requests.get(url, headers=h, params=q, allow_redirects=False)
-        pd = get_req.json()
-        if get_req.status_code == 404:
+        if get_req.status_code == 404 or get_req.status_code == 302:
             return None
+
+        pd = get_req.json()
         count = 0
         for post in pd["data"]["children"]:
             count = count + post["data"]["title"].lower().count(key)
