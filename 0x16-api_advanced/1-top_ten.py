@@ -14,7 +14,7 @@ def top_ten(subreddit):
     get_req = requests.get(url, headers=headers, allow_redirects=False)
     get_subs = get_req.json()
     if get_req.status_code == 404:
-        return (0)
+        print(None)
     else:
         count = 0
         for post in get_subs["data"]["children"]:
