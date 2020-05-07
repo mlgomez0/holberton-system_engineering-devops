@@ -5,7 +5,7 @@
 import requests
 
 
-def recurse(subreddit, hot_list, v_aft=''):
+def recurse(subreddit, hot_list=[], v_aft=''):
     """uses get request to reddit url to
        get all hot posts """
 
