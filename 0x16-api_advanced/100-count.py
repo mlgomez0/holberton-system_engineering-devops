@@ -27,10 +27,3 @@ def count_words(subreddit, word_list, v_aft=''):
             count = count + post["data"]["title"].lower().count(key)
         if count != 0:
             print("{} : {}".format(key, count))
-"""
-            v_aft = pd["data"]["after"]
-            if v_aft is None:
-                if count != 0:
-                    print("{} : {}".format(key, count))
-            else:
-                return (count_words(subreddit, word_list, v_aft)) """
