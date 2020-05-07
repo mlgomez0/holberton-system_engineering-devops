@@ -19,7 +19,7 @@ def recurse(subreddit, hot_list=[], v_aft=''):
     else:
         for post in pd["data"]["children"]:
             hot_list.append(post["data"]["title"])
-        v_aft=pd["data"]["after"]
+        v_aft = pd["data"]["after"]
         if v_aft is None:
             return hot_list
         else:
