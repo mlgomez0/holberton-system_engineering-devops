@@ -10,6 +10,7 @@
 #Installation and sign-in in datadog
 - https://www.datadoghq.com
 - https://app.datadoghq.com/account/settings#api
+- curl -X GET https://api.datadoghq.com/api/v1/dashboard -H "Content-Type: application/json" -H "DD-API-KEY: ${DD_CLIENT_API_KEY}" -H "DD-APPLICATION-KEY: ${DD_CLIENT_APP_KEY}"
 
 ## Usage
 
